@@ -1,0 +1,166 @@
+<ngb-carousel [hidden]="toggle1">
+  <ng-template ngbSlide>
+    <img src="../assets/img/musik/pic1.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>MUSIK DAERAH INDONESIA</h3>
+      <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <!-- <img [src]="images[1]" alt="Random second slide"> -->
+    <img src="../assets/img/musik/pic2.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>MUSIK DAERAH INDONESIA</h3>
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <!-- <img [src]="images[2]" alt="Random third slide"> -->
+    <img src="../assets/img/musik/pic3.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>MUSIK DAERAH INDONESIA</h3>
+      <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<div class="container" [hidden]="toggle1">
+  <div style="padding-top: 10px" class="col-lg-12">
+    <h4>Music Daerah</h4>
+  </div>
+  <p>Musik daerah atau disebut musik tradisional merupakan musik yang lahir dan berkembang dari budaya daerah setempat.
+    Berikut beberapa contoh musik daerah Indonesia.</p>
+  <label>1. Tanjidor</label>
+  <p>Tanjidor merupakan orkes rakyat Betawi yang menggunakan alat musik Barat, seperti tambur besar dan terompet. Pada
+    umumnya alat musik yang digunakan dalam orkes tanjidor yaitu alat musik tiup logam, seperti trombon, piston, dan
+    terompet. Orkes ini biasanya dilengkapi dengan alat musik pukul yang disebut tambur.</p>
+  <label>2. Gambang Kromong</label>
+  <p>Gambang kromong juga merupakan musik rakyat Betawi yang mendapat pengaruh dari kebudayaan Cina. Istilah gambang
+    kromong diambil dari alat musik yang digunakan dalam musik ini, yaitu gambang dan kromong. Bilahan gambang biasanya
+    dibuat dari kayu yang berjumlah delapan belas. Adapun kromong biasanya dibuat dari perunggu atau besi yang berjumlah
+    sepuluh buah.</p>
+  <label>3. Kolintang</label>
+  <p>Kolintang merupakan musik tradisional dari Minahasa, Sulawesi Utara. Alat musik ini berbentuk bilahan kayu seperti
+    gambang dan terdiri atas melodi, ritme, dan bas. Musik ini
+    berfungsi sebagai hiburan.
+  </p>
+  <label>4. Sampek</label>
+  <p>Sampek merupakan alat musik yang berasal dari daerah Kalimantan. Alat musik ini merupakan jenis alat musik petik
+    berdawai tiga. Sampek dibuat dari bahan kayu dengan hiasan ukiran yang indah. Alat musik ini digunakan untuk
+    mengiringi tari-tarian daerah setempat.</p>
+  <p>Berdasarkan sumbernya, bunyi dibagi menjadi dua, yaitu bunyi yang dihasilkan alat musik dan bunyi yang dihasilkan
+    oleh suara manusia. Ada satu jenis musik lagi, yaitu penggabungan musik instrumental dan vokal. Alat music
+    (instrumen) di sini berfungsi mengiringi sebuah nyanyian.</p>
+  <label>1. Teknik Vokal</label>
+  <p>Ada beberapa teknik vokal yakni</p>
+  <ol>
+    <ul>
+      <li>Frasering</li>
+      <p>Frasering adalah teknik pemenggalan kalimat lagu dan pengucapan kata yang jelas. Frasering berhubungan erat
+        dengan teknik pernapasan. </p>
+      <li>Ekspresi</li>
+      <p>Ekspresi disebut juga penjiwaan lagu. Hal ini lebih ditekan kan pada kemampuan penyanyi menyesuaikan isi dan
+        jiwa lagu sesuai dengan kehendak pencipta.</p>
+    </ul>
+  </ol>
+  <p>Berikut beberapa hal yang harus diketahui oleh seorang penyanyi.</p>
+  <ol>
+    <ul>
+      <li>Menguasai materi lagu</li>
+      <li>Mengerti isi lagu</li>
+      <li>Menerapkan frasering dengan baik</li>
+      <li>Memahami tanda-tanda yang terdapat dalam lagu</li>
+    </ul>
+  </ol>
+  <p>contohnya tanda tempo, tanda dinamik, dan tanda
+    ekspresi.
+  </p>
+  <p>Berikut contoh beberapa tanda ekspresi lagu.</p>
+  <ol>
+    <ul>
+      <li>Gaya Marcato</li>
+      <p>Dalam mengucapkan kata-kata atau syair lagu diberi tekanan, sehingga terasa semangat
+        dan berkobar dalam mengungkapkan pesan yang ingin disampaikan. Contoh lagu wajib yang menggunakan gaya ini yaitu
+        ”Indonesia Raya”,
+        ”Garuda Pancasila”, dan ”Maju Tak Gentar”.
+      </p>
+      <li>Gaya Legato</li>
+      <p>Gaya lagu ini diterapkan untuk lagu atau musik lembut dan mampu melukiskan suasana
+        tenang. Hubungan kata-kata yang satu dengan yang lain selalu bersambungan. Contoh lagu yang dinyanyikan dengan
+        menggunakan gaya legato yaitu lagu ”Syukur”.
+      </p>
+    </ul>
+  </ol>
+  <label>2. Teknik Mengiringi Lagu</label>
+  <p>Lagu dapat diiringi menggunakan alat musik ritmis dan melodis.
+    Iringan sebuah lagu biasanya terdiri atas bagian-bagian berikut.
+  </p>
+  <ol>
+    <ul>
+      <li>Intro adalah melodi pembuka sebelum lagu dimulai</li>
+      <li>Lagu</li>
+      <li>Interlude adalah musik di tengah lagu</li>
+      <li>Coda adalah penutup lagu</li>
+    </ul>
+  </ol>
+  <button *ngIf="toggle3 == true" style="margin-top: 24px;margin-bottom: 125px"
+    class="btn btn-block btn-outline-primary cursor-restriction" (click)="startSession1()">
+    Mulai Kuis </button>
+  <button *ngIf="toggle3 == false" style="margin-top: 24px;margin-bottom: 125px"
+    class="btn btn-block btn-outline-primary cursor-restriction" (click)="nextSession()">
+    Lanjut ke sesi berikutnya </button>
+</div>
+<div [hidden]="!toggle1" style="margin-left: 70px;margin-right: 70px; margin-top: 70px" class="card">
+  <div class="card-body">
+    <p>
+      <ngb-progressbar [max]="80" type="success" [value]=loadingBar></ngb-progressbar>
+    </p>
+    <div class="row justify-content-md-center">
+      <!-- <div>Apa saja unsur yang ada pada karya seni tari, kecuali ?</div> -->
+      <div class="col-sm-12 col-lg-12" style="text-align: center">{{allQuestions[idQues].question}}</div>
+      <div style="margin-top: 10px" class="col-md-9 col-form-label">
+        <div class="row justify-content-md-center">
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].a.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              A. {{allQuestions[idQues].a.label}}</button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].b.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              B. {{allQuestions[idQues].b.label}}</button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].c.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              C. {{allQuestions[idQues].c.label}}</button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].d.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              D. {{allQuestions[idQues].d.label}}</button>
+          </div>
+        </div>
+        <!-- <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="a">
+            <label class="form-check-label">a) Raga </label>
+          </div>
+          <br>
+          <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="b">
+            <label class="form-check-label">b) Irama</label>
+          </div>
+          <br>
+          <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="c">
+            <label class="form-check-label">c) Dinamika</label>
+          </div>
+          <br>
+          <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="d">
+            <label class="form-check-label">d) Rasa</label>
+          </div> -->
+      </div>
+    </div>
+  </div>
+</div>

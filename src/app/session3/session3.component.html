@@ -1,0 +1,135 @@
+<ngb-carousel [hidden]="toggle1">
+  <ng-template ngbSlide>
+    <img src="../assets/img/picture1.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>SENI TARI INDONESIA</h3>
+      <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <!-- <img [src]="images[1]" alt="Random second slide"> -->
+    <img src="../assets/img/picture2.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>SENI TARI INDONESIA</h3>
+      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <!-- <img [src]="images[2]" alt="Random third slide"> -->
+    <img src="../assets/img/picture3.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3>SENI TARI INDONESIA</h3>
+      <!-- <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> -->
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<div class="container" [hidden]="toggle1">
+  <div style="padding-top: 10px" class="col-lg-12">
+    <h4>MENGENAL POLA LANTAI PADA KARYA TARI</h4>
+  </div>
+  <p>Karya seni tari merupakan salah satu seni yang menampilkan gerakan tubuh secara berirama yang dilakukan berkelompok
+    atau individu untuk mengungkapkan perasaan, maksud, dan pikiran. Tarian merupakan perpaduan dari beberapa unsur
+    yaitu raga, irama, dan rasa.</p>
+
+  <p>Para penari selalu berubah-ubah posisi membuat berbagai macam bentuk gerakan sesuai yang terdapat pada pola lantai.
+    Pola lantai sangat mendukung penyajian dari suatu karya tari. Berikut adalah poin mengenai makna pola lantai, yaitu
+    :</p>
+  <ol>
+    <li>Garis yang dilalui oleh penari</li>
+    <p>Merupakan garis yang dilalui oleh penari untuk menciptakan sebuah tarian dan digunakan juga untuk membuat formasi
+      untuk penari kelompok. Contohnya adalah formasi garis horizontal yang dibuat oleh tiga penari yang dapat dilihat
+      pada Gambar dibawah ini.</p>
+    <img class="img-fluid" alt="Responsive image" src="../assets/img/tari/1.jpg">
+    <li>Pola garis dasar</li>
+    <p>Pola lantai pada dasarnya ada dua pola garis dasar pada lantai, yaitu garis lurus dan garis melengkung. Kesan
+      yang diciptakan garis lurus adalah sederhana dan kuat, sedangkan garis melengkung adalah lembut dan lemah. </p>
+    <img class="img-fluid" alt="Responsive image" src="../assets/img/tari/2.jpg">
+  </ol>
+  <p>Kumpulan penyusunan tari disebut koreografi, Bedasarkan bentuk koreografinya, tari di Indonesia dibagi menjadi tiga
+    jenis, yaitu :</p>
+  <ol>
+    <li>Tari Rakyat</li>
+    <p>Tari rakyat sangat sederhana, kurang memperhatikan norma-norma keindahan, dan tidak memiliki bentuk yang standar.
+      Gerak-gerak tari rakyat sangat sederhana sebab lebih mementingkan keyakinan. Contoh : Tari Ana Ule dari Flores.
+    </p>
+    <li>Tari Klasik</li>
+    <p>Tari klasik merupakan karya tari yang sangat memperhatikan keindahan. Tari klasik dipelihara dengan baik di
+      istana raja-raja dan di kalangan bangsawan. Gerak-gerak tari klasik sudah mempunyai aturan tertentu dan tidak
+      boleh dilanggar. Contoh : Tari Srimpi dari Surakarta.</p>
+    <li>Tari Kreasi Baru</li>
+    <p>Tari kreasi baru juga sering disebut tari modern. Gerak-gerak dalam tari kreasi baru sangat bervariasi. Contoh :
+      Tari Geol Saliter dari Yogyakarta.</p>
+  </ol>
+  <p>Keindahan karya seni tari didukung dengan keindahan pola lantai, berikut adalah uraian yang perlu diperhatikan
+    dalam memperindah tarian :</p>
+  <ol>
+    <li>Bentuk pola lantai, gerakan dapat dikembangkan dari garis lurus dan garis lengkung yang digunakan dapat
+      memperindah tarian yang dilakukan.</li>
+    <li>Maksud pola lantai, setiap gerakan pola lantai seharusnya mempunyai maksud maksud tertentu agar keindahan
+      bernilai tinggi.</li>
+    <li>Kesesuaian bentuk pola lantai dengan jumlah penari agar gerakan seimbang, menarik, dan beragam.</li>
+    <li>Kesesuaian bentuk pola lantai dengan ruangan.</li>
+    <li>Kesesuaian bentuk pola lantai dengan gerakan.</li>
+  </ol>
+  <button *ngIf="toggle3 == true" style="margin-top: 24px;margin-bottom: 125px"
+    class="btn btn-block btn-outline-primary cursor-restriction" (click)="startSession1()">
+    Mulai Kuis </button>
+  <button *ngIf="toggle3 == false" style="margin-top: 24px;margin-bottom: 125px"
+    class="btn btn-block btn-outline-primary cursor-restriction" (click)="nextSession()">
+    Lanjut ke sesi berikutnya </button>
+</div>
+<div [hidden]="!toggle1" style="margin-left: 70px;margin-right: 70px; margin-top: 70px" class="card">
+  <div class="card-body">
+    <p>
+      <ngb-progressbar [max]="80" type="success" [value]=loadingBar></ngb-progressbar>
+    </p>
+    <div class="row justify-content-md-center">
+      <!-- <div>Apa saja unsur yang ada pada karya seni tari, kecuali ?</div> -->
+      <div class="col-sm-12 col-lg-12" style="text-align: center">{{allQuestions[idQues].question}}</div>
+      <div style="margin-top: 10px" class="col-md-9 col-form-label">
+        <div class="row justify-content-md-center">
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].a.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              A. {{allQuestions[idQues].a.label}}</button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].b.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              B. {{allQuestions[idQues].b.label}}</button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].c.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              C. {{allQuestions[idQues].c.label}}</button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button value="{{allQuestions[idQues].d.value}}" (click)="pilihJawaban($event)"
+              class="btn btn-block btn-outline-primary cursor-restriction btn-choose" style="margin-top: 24px;">
+              D. {{allQuestions[idQues].d.label}}</button>
+          </div>
+        </div>
+        <!-- <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="a">
+            <label class="form-check-label">a) Raga </label>
+          </div>
+          <br>
+          <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="b">
+            <label class="form-check-label">b) Irama</label>
+          </div>
+          <br>
+          <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="c">
+            <label class="form-check-label">c) Dinamika</label>
+          </div>
+          <br>
+          <div class="form-check form-check-inline mr-1">
+            <input class="form-check-input" type="radio" name="ques1" value="d">
+            <label class="form-check-label">d) Rasa</label>
+          </div> -->
+      </div>
+    </div>
+  </div>
+</div>

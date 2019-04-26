@@ -1,0 +1,129 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <a class="navbar-brand" href="#">
+      <img class="img-fluid" alt="Responsive image" src="../assets/img/headerNavbar.png">
+    </a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="home()">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()" href="#">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div *ngIf="disable2 == true" style="text-align: center; margin-top: 40px; color: rgb(50, 238, 50)"
+    class="col-sm-12 col-lg-12">
+    <h3>Session Sedang Berjalan</h3>
+  </div>
+  <div *ngIf="disable1 == true" style="text-align: center; margin-top: 40px; color: rgb(252, 38, 38)"
+    class="col-sm-12 col-lg-12">
+    <h3>Session Belum Dimulai</h3>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-lg-3">
+          <button [disabled]="!disable1" class="btn btn-primary" style="margin-top: 24px;" (click)="startSession()">
+            Memulai Session</button>
+        </div>
+        <div class="col-sm-12 col-lg-3">
+          <button [disabled]="!disable2" class="btn btn-danger" style="margin-top: 24px;" (click)="stopSession()">
+            Stop Session</button>
+        </div>
+        <div class="col-sm-12 col-lg-3">
+          <button class="btn btn-primary btn-outline-primary cursor-restriction" style="margin-top: 24px;"
+            (click)="modalRekap(content)">
+            Lihat Rekap Nilai</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Daftar Nilai Siswa</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div style="padding-left: 4px; padding-right: 4px" class="row justify-content-md-center">
+          <div style="text-align:center;" class="col-sm-12 col-lg-12">
+            <button class="btn btn-block btn-outline-primary cursor-restriction"
+              style="margin-top: 24px;" (click)="printNilai()">
+              Cetak PDF</button>
+          </div>
+          <!-- <div *ngIf="sttsSession == false" style="text-align:center;" class="col-sm-12 col-lg-12">
+            <label style="color: red">-- Session Belum Dimulai --</label>
+          </div> -->
+          <!-- <div *ngFor="let data of rekapNilai" class="col-sm-12 col-lg-3">
+            <label>{{data.namaSiswa}}</label>
+          </div> -->
+
+          <!-- DATA TAMPIL V1 -->
+          <!-- <div *ngFor="let data of rekapNilai" class="col-sm-12 col-lg-12 card">
+            <label><strong>Nama Siswa :</strong></label>
+            <label>{{data.namaSiswa}}</label>
+            <label><strong>Nilai Session 1 :</strong></label>
+            <label>{{data.nilaiS1}}</label>
+            <label><strong>Nilai Session 2 :</strong></label>
+            <label>{{data.nilaiS2}}</label>
+            <label><strong>Nilai Session 3 :</strong></label>
+            <label>{{data.nilaiS3}}</label>
+            <label><strong>Nilai Session 4 :</strong></label>
+            <label>{{data.nilaiS4}}</label>
+            <label><strong>Nilai Rata-rata :</strong></label>
+            <label>{{data.nilaiRata * 10}}</label>
+          </div> -->
+
+          <!-- DATA TAMPIL V2 -->
+          <div id="listData" *ngFor="let data of rekapNilai" class="col-sm-12 col-lg-12 card">
+            <label><strong>Nama Siswa :&emsp;</strong>{{data.namaSiswa}}</label>
+            <label><strong>Nilai Session 1 :&emsp;</strong>{{data.nilaiS1}}</label>
+            <label><strong>Nilai Session 2 :&emsp;</strong>{{data.nilaiS2}}</label>
+            <label><strong>Nilai Session 3 :&emsp;</strong>{{data.nilaiS3}}</label>
+            <label><strong>Nilai Session 4 :&emsp;</strong>{{data.nilaiS4}}</label>
+            <label><strong>Nilai Rata-rata :&emsp;</strong>{{data.nilaiRata * 10}}</label>
+          </div>
+
+
+          <!-- <div class="col-sm-12 col-lg-3">
+              <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+                style="margin-top: 24px;" (click)="toSession1()">
+                Session 1 </button>
+            </div>
+            <div class="col-sm-12 col-lg-3">
+              <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+                style="margin-top: 24px;" (click)="toSession2()">
+                Session 2 </button>
+            </div>
+            <div class="col-sm-12 col-lg-3">
+              <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+                style="margin-top: 24px;" (click)="toSession3()">
+                Session 3 </button>
+            </div>
+            <div class="col-sm-12 col-lg-3">
+              <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+                style="margin-top: 24px;" (click)="toSession4()">
+                Session 4 </button>
+            </div> -->
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+  </div>
+</ng-template>

@@ -1,0 +1,21 @@
+h4 {
+    /* border: 5px solid #111; width: 20%;
+    font-family: 'Montserrat', sans-serif;
+    align: "center"; */
+}
+
+.btn-choose {
+    height: 150px;
+}
+
+/* li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+    content: "\2014\00A0";
+ } */
+
+ p {
+    text-align: justify;
+}

@@ -1,0 +1,159 @@
+@font-face {
+    font-family: "myQortd";
+    src: url("/src/assets/font/expressway\ rg.ttf");
+}
+
+.carousel .carousel-control {
+    visibility: hidden;
+}
+
+#typingOnScreen {
+    animation-name: example;
+    animation-duration: 4s;
+    /* font-family: Dosis, arial, sans-serif; */
+    font-family: Dosis, arial, sans-serif;
+}
+
+@keyframes example {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+    25% {
+        left: 200px;
+        top: 0px;
+    }
+    50% {
+        left: 200px;
+        top: 200px;
+    }
+    75% {
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.container {
+    margin-top: 90vh;
+}
+
+.bg-light {
+    background-color: #0f0f0f!important;
+    opacity: 0.7;
+}
+
+/* .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgba(255, 255, 255, 0.9)
+} */
+
+.navbar .nav-item .nav-link {
+    color: white;
+    /* font-weight: bold; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar .nav-item .nav-link:hover {
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 1;
+}
+
+nav {
+    z-index: 9;
+    /* opacity: 0.6; */
+}
+
+.intro-heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    margin-bottom: 40px
+}
+
+.intro-heading:hover {
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px;
+    margin-bottom: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.heading-frame {
+    padding: 19px 1px;
+    border: 4px solid #111;
+    display: initial-block;
+}
+
+.heading-frame:hover {
+    padding: 19px 1px;
+    border: 4px solid rgb(248, 248, 248);
+    background-color: #111;
+    display: initial-block;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.paragraph {
+    color: #808080;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.carou-img {
+    position: relative;
+    /* animation: floatBubble 2s infinite normal ease-out; */
+}
+
+@keyframes floatBubble {
+    0% {
+        top: 500px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+.img-dashboard {
+    max-width: 50%;
+}
+
+.img-dashboard-alt {
+    max-width: 20%;
+}
+
+.my-footer {
+    position: absolute;
+    margin-top: 1190px;
+    background-color: black;
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+
+.button-start {
+    background-color: #111;
+    border: 2px solid rgb(196, 196, 196);
+    width: 50%;
+    font-size: 17px; 
+    color: white;
+}
+
+.button-start:hover {
+    background-color: transparent;
+    border: none;
+    border-left: 2px solid #111;
+    border-right: 2px solid #111;
+    width: 60%;
+    font-size: 22px;    
+    color: rgb(0, 0, 0);
+}
+
+.dropdown-menu {
+    padding-left: 24px;
+    padding-right: 24px;
+}

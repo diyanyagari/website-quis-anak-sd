@@ -1,0 +1,219 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <a class="navbar-brand" href="#">
+    <img class="img-fluid" alt="Responsive image" src="../assets/img/headerNavbar.png">
+  </a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li *ngIf="sttsLogin == 'true'" class="nav-item">
+        <a class="nav-link" (click)="toAdmin()">Monitoring</a>
+      </li>
+      <li *ngIf="sttsLogin == 'false'" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Login Guru
+        </a>
+        <div style="width: 500px" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <!-- <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a> -->
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" formControlName="username" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            </div>
+            <div class="form-group">
+              <button [disabled]="loading" class="btn btn-primary">Login</button>
+              <img *ngIf="loading" class="pl-3"
+                src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+              <!-- <a routerLink="/register" class="btn btn-link">Register</a> -->
+            </div>
+          </form>
+        </div>
+      </li>
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+
+<ngb-carousel style="position:absolute;width:100%;top:0;">
+  <ng-template ngbSlide>
+    <img class="carou-img" style="height: 100%" src="../assets/img/bgHome2.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      <h3 id="typingOnScreen">More Than One Word</h3>
+      <!-- <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> -->
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<div class="container">
+  <div class="col-lg-12">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-4">
+        <!-- <img class="img-fluid" alt="Responsive image" src="../assets/img/headerNavbar.png"> -->
+        <h4 class="intro-heading heading-frame text-center">Culture of Indonesia</h4>
+      </div>
+      <div style="position: absolute; margin-top: 120px" class="col-lg-4"></div>
+      <div style="position: absolute; margin-top: 120px;text-align:center;" class="col-lg-4">
+        <button class="button-start" (click)="open(content)">START QUIS</button>
+      </div>
+      <div style="position: absolute; margin-top: 120px" class="col-lg-4"></div>
+      <div style="position: absolute; margin-top: 170px" class="col-lg-8">
+        <p class="paragraph text-center">Indonesia, country located off the coast of mainland Southeast Asia in the
+          Indian and
+          Pacific oceans. It is an archipelago that lies across the Equator and spans a distance equivalent to
+          one-eighth of Earth’s circumference.
+        </p>
+      </div>
+      <div style="position: absolute; margin-top: 350px" class="col-lg-12">
+        <img style="max-width: 30%;float:left" class="img-fluid img-dashboard" alt="Responsive image"
+          src="../assets/img/home/image1.jpg">
+        <p style="padding-left: 345px">The sovereign state is a presidential, constitutional republic with an elected
+          parliament. It has 34
+          provinces, of which five have special status. Jakarta, the country's capital, is the second most populous
+          urban area in the world. The country shares land borders with Papua New Guinea, East Timor, and the eastern
+          part of Malaysia. Other neighbouring countries include Singapore, Vietnam, the Philippines, Australia, Palau,
+          and India's Andaman and Nicobar Islands.</p>
+      </div>
+      <div style="position: absolute; margin-top: 620px" class="col-lg-12">
+
+        <img style="max-width: 30%;float: right;" class="img-fluid img-dashboard" alt="Responsive image"
+          src="../assets/img/home/image2.jpg">
+        <p style="text-align: end;padding-right: 345px">Despite its large population and densely populated regions,
+          Indonesia has vast areas of wilderness that support a high level of biodiversity. The country has abundant
+          natural resources like oil and natural gas, tin, copper and gold. Agriculture mainly produces rice, palm oil,
+          tea, coffee, cacao, medicinal plants, spices and rubber. Indonesia's major trading partners are China,
+          United States, Japan, Singapore and India.</p>
+      </div>
+      <div style="position: absolute; margin-top: 920px" class="col-lg-12">
+        <img style="max-width: 30%;float:left" class="img-fluid img-dashboard" alt="Responsive image"
+          src="../assets/img/home/image3.jpg">
+        <p style="padding-left: 345px">The history of the Indonesian archipelago has been influenced by foreign powers
+          drawn to its natural resources. It has been an important region for trade since at least the 7th century, when
+          Srivijaya and then later Majapahit traded with entities from mainland China and the Indian subcontinent.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="col-lg-12; my-footer">
+
+</div>
+
+<!-- PILIHAN SESSION -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Mulai Kuis</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <div class="row justify-content-md-center">
+          <div *ngIf="sttsSession == false" style="text-align:center;" class="col-sm-12 col-lg-12">
+            <label style="color: red">-- Session Belum Dimulai --</label>
+          </div>
+          <div *ngIf="sttsSession == true" style="text-align:center;" class="col-sm-12 col-lg-12">
+            <div class="form-group">
+              <label for="username">Masukan Namamu..</label>
+              <input id="namaSiswa" type="text" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button *ngIf="sttsSession == true" [disabled]="!sttsSession"
+              class="btn btn-block btn-outline-primary cursor-restriction" style="margin-top: 24px;"
+              (click)="mulaiSession()">
+              MULAI</button>
+          </div>
+          <!-- <div class="col-sm-12 col-lg-3">
+            <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+              style="margin-top: 24px;" (click)="toSession1()">
+              Session 1 </button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+              style="margin-top: 24px;" (click)="toSession2()">
+              Session 2 </button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+              style="margin-top: 24px;" (click)="toSession3()">
+              Session 3 </button>
+          </div>
+          <div class="col-sm-12 col-lg-3">
+            <button [disabled]="!sttsSession" class="btn btn-block btn-outline-primary cursor-restriction"
+              style="margin-top: 24px;" (click)="toSession4()">
+              Session 4 </button>
+          </div> -->
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button> -->
+  </div>
+</ng-template>
+
+<!-- <div class="container">
+  <h3 style="text-align:center">
+    KUIS &#x263A;
+  </h3>
+  <div class="card" [hidden]="isQuestionCardShow">
+    <div class="card-body">
+      <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-lg-3">
+          <button class="btn btn-block btn-outline-primary cursor-restriction" style="margin-top: 24px;"
+            (click)="toSession1()">
+            Session 1 </button>
+        </div>
+        <div class="col-sm-12 col-lg-3">
+          <button class="btn btn-block btn-outline-primary cursor-restriction" style="margin-top: 24px;"
+            (click)="toSession2()">
+            Session 2 </button>
+        </div>
+        <div class="col-sm-12 col-lg-3">
+          <button class="btn btn-block btn-outline-primary cursor-restriction" style="margin-top: 24px;"
+            (click)="toSession3()">
+            Session 3 </button>
+        </div>
+        <div class="col-sm-12 col-lg-3">
+          <button class="btn btn-block btn-outline-primary cursor-restriction" style="margin-top: 24px;"
+            (click)="toSession4()">
+            Session 4 </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
